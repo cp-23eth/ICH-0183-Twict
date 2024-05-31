@@ -1,4 +1,7 @@
 {
+    "require": {
+        "monolog/monolog": "^3.6"
+    },
     "autoload": {
         "files": [
             "core/libs/ArrayPath.php",

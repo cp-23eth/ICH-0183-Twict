@@ -4,13 +4,18 @@ declare(strict_types=1);
 
 namespace App\Libs;
 
+use App\Libs\LogHandler;
+
 class CSRFSecurityHandler
 {
     protected string $csrfTokenName = '';
+    private LogHandler $logger;
 
     public function __construct(string $csrfTokenName = 'csrf')
     {
         $this->csrfTokenName = $csrfTokenName;
+
+        $this->logger = LogHandler::get(get_class($this));
     }
 
     public function create(): void
@@ -48,6 +53,10 @@ class CSRFSecurityHandler
         }
 
         $this->clear();
+
+        if (!$success) {
+            $this->logger->warning('CSRF Token is invalid', ['idUser' => $_SESSION['user']['idUser'] ?? null, 'GET' => $_GET ?? null]);
+        }
 
         return $success;
     }

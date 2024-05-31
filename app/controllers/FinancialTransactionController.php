@@ -4,11 +4,22 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
+use App\Libs\LogHandler;
 use App\Models\FinancialTransaction;
 use App\Models\BankAccount;
 
 class FinancialTransactionController extends AppController
 {
+    private LogHandler $logger;
+
+    protected function before(): bool
+    {
+        $this->logger = LogHandler::get(get_class($this));
+        $this->logger->info('Begining handle `' . $_SERVER['REQUEST_METHOD'] . '` request on `' . $_SERVER['REQUEST_URI'] . '`', ['idUser' => $_SESSION['user']['idUser'] ?? null, 'GET' => $_GET ?? null]);
+
+        return parent::before();
+    }
+
     public function index(): void
     {
         if (!empty($_GET['idSender']))
