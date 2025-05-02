@@ -80,7 +80,7 @@ class FinancialTransaction extends AppModel
                 (:amount, :idSender, :idRecipient);
             SQL);
 
-        $stmt->bindParam(':amount', $model['amount'], PDO::PARAM_STR);
+        $stmt->bindParam(':amount', $model['amount'], PDO::PARAM_INT);
         $stmt->bindParam(':idSender', $model['idSender'], PDO::PARAM_INT);
         $stmt->bindParam(':idRecipient', $model['idRecipient'], PDO::PARAM_INT);
         $success = $stmt->execute();
@@ -102,7 +102,7 @@ class FinancialTransaction extends AppModel
             LIMIT 1;
             SQL);
 
-        $stmt->bindParam(':amount', $model['amount'], PDO::PARAM_STR);
+        $stmt->bindParam(':amount', $model['amount'], PDO::PARAM_INT);
         $stmt->bindParam(':idSender', $model['idSender'], PDO::PARAM_INT);
         $stmt->bindParam(':idRecipient', $model['idRecipient'], PDO::PARAM_INT);
         $stmt->bindParam(':id', $model['id'], PDO::PARAM_INT);

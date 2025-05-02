@@ -104,8 +104,8 @@ class BankAccount extends AppModel
             SQL);
 
         $stmt->bindParam(':description', $model['description'], PDO::PARAM_STR);
-        $stmt->bindParam(':idOwner', $model['idOwner'], PDO::PARAM_STR);
-        $stmt->bindParam(':id', $model['id'], PDO::PARAM_STR);
+        $stmt->bindParam(':idOwner', $model['idOwner'], PDO::PARAM_INT);
+        $stmt->bindParam(':id', $model['id'], PDO::PARAM_INT);
         $success = $stmt->execute();
 
         return $success;
