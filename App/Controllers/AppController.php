@@ -17,7 +17,7 @@ abstract class AppController extends Controller
 
     protected function before(): bool
     {
-        $this->view = new View(templatePath: dirname(__DIR__) . '/views/');
+        $this->view = new View(templatePath: dirname(__DIR__) . '/Views/');
         $this->view->setFilename(strtolower($this->routeParams['controller']) . DIRECTORY_SEPARATOR . strtolower($this->routeParams['action']));
 
         $this->flash = new FlashNotificationHelper();
