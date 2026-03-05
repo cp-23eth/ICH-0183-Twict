@@ -15,6 +15,7 @@
     },
     "forwardPorts": [
         "proxy:80",
+        "proxy:443",
         "db:3306"
     ]
 }
