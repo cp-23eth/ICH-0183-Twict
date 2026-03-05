@@ -22,7 +22,7 @@ class View implements \ArrayAccess
 	public function __construct(
 		?string $templatePath = null,
 		?string $extension = null,
-		array $context = null,
+		?array $context = null,
 		?string $cachePath = null,
 		?bool $useCache = null
 	) {
@@ -33,7 +33,7 @@ class View implements \ArrayAccess
 		$this->useCache = $useCache ?? false;
 	}
 
-	public function render(?string $filename = null, array $context = null): void
+	public function render(?string $filename = null, ?array $context = null): void
 	{
 		$filename = $filename ?? $this->filename;
 
