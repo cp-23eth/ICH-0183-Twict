@@ -36,7 +36,7 @@ class FinancialTransactionController extends AppController
         FinancialTransaction::add($financialTransaction);
 
         $this->flash->success('Transaction financière ajoutée');
-        $this->redirect('/financialtransaction/index');
+        $this->redirect('/financialTransaction/index');
     }
 
     public function edit(): void
@@ -68,6 +68,6 @@ class FinancialTransactionController extends AppController
         FinancialTransaction::remove($financialTransaction);
 
         $this->flash->success('Transaction financière supprimée');
-        $this->redirect('/financialtransaction/index');
+        $this->redirect('/financialTransaction/index');
     }
 }

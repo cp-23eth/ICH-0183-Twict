@@ -37,7 +37,7 @@ class TransactionMessageController extends AppController
         TransactionMessage::add($transactionMessage);
 
         $this->flash->success('Message de transaction ajouté');
-        $this->redirect('/transactionmessage/index');
+        $this->redirect('/transactionMessage/index');
     }
 
     public function edit(): void
@@ -55,7 +55,7 @@ class TransactionMessageController extends AppController
         TransactionMessage::update($transactionMessage);
 
         $this->flash->success('Message de transaction sauvegardé');
-        $this->redirect('/transactionmessage/index');
+        $this->redirect('/transactionMessage/index');
     }
 
     public function remove(): void
