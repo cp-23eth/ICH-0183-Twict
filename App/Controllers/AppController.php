@@ -10,6 +10,8 @@ use \App\Libs\SessionSecurityHandler;
 use \Core\Controller;
 use \Core\View;
 
+use function Core\Libs\str_lower_camel_case;
+
 abstract class AppController extends Controller
 {
     protected \Core\View $view;
@@ -19,8 +21,8 @@ abstract class AppController extends Controller
 
     protected function before(): bool
     {
-        $this->view = new View(templatePath: dirname(__DIR__) . '/views/');
-        $this->view->setFilename(strtolower($this->routeParams['controller']) . DIRECTORY_SEPARATOR . strtolower($this->routeParams['action']));
+        $this->view = new View(templatePath: dirname(__DIR__) . '/Views/');
+        $this->view->setFilename(str_lower_camel_case($this->routeParams['controller']) . DIRECTORY_SEPARATOR . str_lower_camel_case($this->routeParams['action']));
 
         $this->flash = new FlashNotificationHelper();
 
