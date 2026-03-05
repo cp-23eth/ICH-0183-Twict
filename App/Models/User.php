@@ -35,13 +35,6 @@ class User extends Model
             SQL)
             ->fetch() ?: null;
 
-<<<<<<< HEAD
-=======
-        if ($model === false) {
-            $model = null;
-        }
-
->>>>>>> 750c399 (Fix model error when no result found)
         return $model;
     }
 
@@ -126,13 +119,6 @@ class User extends Model
                 SQL)
             ->fetch() ?: null;
 
-<<<<<<< HEAD
-=======
-        if ($model === false) {
-            $model = null;
-        }
-
->>>>>>> 750c399 (Fix model error when no result found)
         return $model;
     }
 }
