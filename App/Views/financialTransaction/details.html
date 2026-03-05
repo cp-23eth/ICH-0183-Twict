@@ -11,26 +11,40 @@
                 <form method="post">
                     <div class="form-group">
                         <label for="financialTransaction_id">ID</label>
-                        <input type="text" class="form-control" id="financialTransaction_id" name="financialTransaction[id]" readonly value="{{ $this.financialTransaction.id }}">
+                        <input type="text" class="form-control" id="financialTransaction_id"
+                            name="financialTransaction[id]" readonly value="{{ $this.financialTransaction.id }}">
                     </div>
                     <div class="form-group">
                         <label for="financialTransactionidSender">Expéditeur</label>
-                        <select class="form-select" id="financialTransactionidSender" name="financialTransaction[idSender]" disabled>
-                            <option value="{{ $this.financialTransaction.idSender }}">{{ $this.financialTransaction.sender.owner.firstname }} {{ $this.financialTransaction.sender.owner.lastname }} ({{ $this.financialTransaction.sender.owner.mailAddress }}) - {{ $this.financialTransaction.sender.description }}</option>
+                        <select class="form-select" id="financialTransactionidSender"
+                            name="financialTransaction[idSender]" disabled>
+                            <option value="{{ $this.financialTransaction.idSender }}">{{
+                                $this.financialTransaction.sender.owner.firstname }} {{
+                                $this.financialTransaction.sender.owner.lastname }} ({{
+                                $this.financialTransaction.sender.owner.mailAddress }}) - {{
+                                $this.financialTransaction.sender.description }}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="financialTransaction_idRecipient">Destinataire</label>
-                        <select class="form-select" id="financialTransaction_idRecipient" name="financialTransaction[idRecipient]" disabled>
-                            <option value="{{ $this.financialTransaction.idRecipient }}">{{ $this.financialTransaction.recipient.owner.firstname }} {{ $this.financialTransaction.recipient.owner.lastname }} ({{ $this.financialTransaction.recipient.owner.mailAddress }}) - {{ $this.financialTransaction.recipient.description }}</option>
+                        <select class="form-select" id="financialTransaction_idRecipient"
+                            name="financialTransaction[idRecipient]" disabled>
+                            <option value="{{ $this.financialTransaction.idRecipient }}">{{
+                                $this.financialTransaction.recipient.owner.firstname }} {{
+                                $this.financialTransaction.recipient.owner.lastname }} ({{
+                                $this.financialTransaction.recipient.owner.mailAddress }}) - {{
+                                $this.financialTransaction.recipient.description }}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="financialTransaction_amount">Montant</label>
-                        <input type="text" class="form-control" id="financialTransaction_amount" name="financialTransaction[amount]" placeholder="Montant" readonly value="{{ $this.financialTransaction.amount }}">
+                        <input type="text" class="form-control" id="financialTransaction_amount"
+                            name="financialTransaction[amount]" placeholder="Montant" readonly
+                            value="{{ $this.financialTransaction.amount }}">
                     </div>
                     <div class="form-group">
-                        <a href="/transactionmessage/index?idTransaction={{ $this.financialTransaction.id }}" class="btn btn-secondary">Liste des messages de transactions</a>
+                        <a href="/transactionMessage/index?idTransaction={{ $this.financialTransaction.id }}"
+                            class="btn btn-secondary">Liste des messages de transactions</a>
                     </div>
                     <div class="form-group">
                         <a href="javascript:history.back()" class="btn btn-primary">Retour</a>

@@ -11,28 +11,43 @@
                 <form method="post">
                     <div class="form-group">
                         <label for="transactionMessage_id">ID</label>
-                        <input type="text" class="form-control" id="transactionMessage_id" name="transactionMessage[id]" readonly value="{{ $this.transactionMessage.id }}">
+                        <input type="text" class="form-control" id="transactionMessage_id" name="transactionMessage[id]"
+                            readonly value="{{ $this.transactionMessage.id }}">
                     </div>
                     <div class="form-group">
                         <label for="transactionMessage_idAuthor">Auteur</label>
-                        <select class="form-select" id="transactionMessage_idAuthor" name="transactionMessage[idAuthor]" disabled>
-                            <option value="{{ $this.transactionMessage.idAuthor }}">{{ $this.transactionMessage.author.firstname }} {{ $this.transactionMessage.author.lastname }} ({{ $this.transactionMessage.author.mailAddress }})</option>
+                        <select class="form-select" id="transactionMessage_idAuthor" name="transactionMessage[idAuthor]"
+                            disabled>
+                            <option value="{{ $this.transactionMessage.idAuthor }}">{{
+                                $this.transactionMessage.author.firstname }} {{ $this.transactionMessage.author.lastname
+                                }} ({{ $this.transactionMessage.author.mailAddress }})</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="transactionMessage_idTransaction">Transaction</label>
-                        <select class="form-select" id="transactionMessage_idTransaction" name="transactionMessage[idTransaction]" disabled>
-                            <option value="{{ $this.transactionMessage.idFinancialTransaction }}">{{ $this.transactionMessage.transaction.sender.owner.firstname }} {{ $this.transactionMessage.transaction.sender.owner.lastname }} ({{ $this.transactionMessage.transaction.sender.owner.mailAddress }}) - {{ $this.transactionMessage.transaction.sender.description }} -> {{ $this.transactionMessage.transaction.recipient.owner.firstname }} {{ $this.transactionMessage.transaction.recipient.owner.lastname }} ({{ $this.transactionMessage.transaction.recipient.owner.mailAddress }}) - {{ $this.transactionMessage.transaction.recipient.description }}</option>
+                        <select class="form-select" id="transactionMessage_idTransaction"
+                            name="transactionMessage[idTransaction]" disabled>
+                            <option value="{{ $this.transactionMessage.idFinancialTransaction }}">{{
+                                $this.transactionMessage.transaction.sender.owner.firstname }} {{
+                                $this.transactionMessage.transaction.sender.owner.lastname }} ({{
+                                $this.transactionMessage.transaction.sender.owner.mailAddress }}) - {{
+                                $this.transactionMessage.transaction.sender.description }} -> {{
+                                $this.transactionMessage.transaction.recipient.owner.firstname }} {{
+                                $this.transactionMessage.transaction.recipient.owner.lastname }} ({{
+                                $this.transactionMessage.transaction.recipient.owner.mailAddress }}) - {{
+                                $this.transactionMessage.transaction.recipient.description }}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="transactionMessage_content">Contenu</label>
-                        <div class="form-control" id="transactionMessage_content" name="transactionMessage[content]" readonly placeholder="Contenu">
+                        <div class="form-control" id="transactionMessage_content" name="transactionMessage[content]"
+                            readonly placeholder="Contenu">
                             {{ $this.transactionMessage.content }}
                         </div>
                     </div>
                     <div class="form-group">
-                        <a href="/financialtransaction/details?id={{ $this.transactionMessage.idTransaction }}" class="btn btn-secondary">Voir la transaction financière</a>
+                        <a href="/financialTransaction/details?id={{ $this.transactionMessage.idTransaction }}"
+                            class="btn btn-secondary">Voir la transaction financière</a>
                     </div>
                     <div class="form-group">
                         <a href="javascript:history.back()" class="btn btn-primary">Retour</a>

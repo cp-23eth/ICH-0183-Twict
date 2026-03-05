@@ -11,22 +11,27 @@
                 <form method="post">
                     <div class="form-group">
                         <label for="user_id">ID</label>
-                        <input type="text" class="form-control" id="user_id" name="user[id]" readonly value="{{ $this.user.id }}">
+                        <input type="text" class="form-control" id="user_id" name="user[id]" readonly
+                            value="{{ $this.user.id }}">
                     </div>
                     <div class="form-group">
                         <label for="user_firstname">Prénom</label>
-                        <input type="text" class="form-control" id="user_firstname" name="user[firstname]" placeholder="Prénom" readonly value="{{ $this.user.firstname }}">
+                        <input type="text" class="form-control" id="user_firstname" name="user[firstname]"
+                            placeholder="Prénom" readonly value="{{ $this.user.firstname }}">
                     </div>
                     <div class="form-group">
                         <label for="user_lastname">Nom</label>
-                        <input type="text" class="form-control" id="user_lastname" name="user[lastname]" placeholder="Nom" readonly value="{{ $this.user.lastname }}">
+                        <input type="text" class="form-control" id="user_lastname" name="user[lastname]"
+                            placeholder="Nom" readonly value="{{ $this.user.lastname }}">
                     </div>
                     <div class="form-group">
                         <label for="user_mailAddress">Adresse email</label>
-                        <input type="email" class="form-control" id="user_mailAddress" name="user[mailAddress]" placeholder="Adresse email" readonly value="{{ $this.user.mailAddress }}">
+                        <input type="email" class="form-control" id="user_mailAddress" name="user[mailAddress]"
+                            placeholder="Adresse email" readonly value="{{ $this.user.mailAddress }}">
                     </div>
                     <div class="form-group">
-                        <a href="/bankaccount/index?idOwner={{ $this.user.id }}" class="btn btn-secondary">Liste des comptes bancaires</a>
+                        <a href="/bankAccount/index?idOwner={{ $this.user.id }}" class="btn btn-secondary">Liste des
+                            comptes bancaires</a>
                     </div>
                     <div class="form-group">
                         <a href="javascript:history.back()" class="btn btn-primary">Retour</a>
