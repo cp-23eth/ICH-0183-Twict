@@ -23,19 +23,24 @@
                         <tr>
                             <th scope="row">{{ $bankAccount.id }}</th>
                             <td>{{ $bankAccount.description }}</td>
-                            <td>{{ $bankAccount.owner.firstname }} {{ $bankAccount.owner.lastname }} ({{ $bankAccount.owner.mailAddress }})</td>
+                            <td>{{ $bankAccount.owner.firstname }} {{ $bankAccount.owner.lastname }} ({{
+                                $bankAccount.owner.mailAddress }})</td>
                             <td>{{ $bankAccount.balance }}</td>
                             <td>
-                                <a href="/bankaccount/details?id={{ $bankAccount.id }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Details</a>
-                                <a href="/bankaccount/edit?id={{ $bankAccount.id }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
-                                <a href="/bankaccount/remove?id={{ $bankAccount.id }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Remove</a>
+                                <a href="/bankAccount/details?id={{ $bankAccount.id }}"
+                                    class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Details</a>
+                                <a href="/bankAccount/edit?id={{ $bankAccount.id }}"
+                                    class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
+                                <a href="/bankAccount/remove?id={{ $bankAccount.id }}"
+                                    class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Remove</a>
                             </td>
                         </tr>
                         {% endforeach %}
                     </tbody>
                 </table>
                 <div class="form-group">
-                    <a href="/bankaccount/add" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ajouter</a>
+                    <a href="/bankAccount/add" class="btn btn-primary btn-lg active" role="button"
+                        aria-pressed="true">Ajouter</a>
                 </div>
             </div>
         </div>

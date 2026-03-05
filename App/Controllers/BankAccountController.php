@@ -36,7 +36,7 @@ class BankAccountController extends AppController
 
         $this->flash->success('Compte bancaire ajouté');
 
-        $this->redirect('/bankaccount/index');
+        $this->redirect('/bankAccount/index');
     }
 
     public function edit(): void
@@ -54,7 +54,7 @@ class BankAccountController extends AppController
         BankAccount::update($bankAccount);
 
         $this->flash->success('Compte bancaire sauvegardé');
-        $this->redirect('/bankaccount/index');
+        $this->redirect('/bankAccount/index');
     }
 
     public function remove(): void
@@ -71,6 +71,6 @@ class BankAccountController extends AppController
         BankAccount::remove($bankAccount);
 
         $this->flash->success('Compte bancaire supprimé');
-        $this->redirect('/bankaccount/index');
+        $this->redirect('/bankAccount/index');
     }
 }

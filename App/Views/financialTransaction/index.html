@@ -23,19 +23,29 @@
                         <tr>
                             <th scope="row">{{ $financialTransaction.id }}</th>
                             <td>{{ $financialTransaction.amount }}</td>
-                            <td>{{ $financialTransaction.sender.owner.firstname }} {{ $financialTransaction.sender.owner.lastname }} ({{ $financialTransaction.sender.owner.mailAddress }}) - {{ $financialTransaction.sender.description }}</td>
-                            <td>{{ $financialTransaction.recipient.owner.firstname }} {{ $financialTransaction.recipient.owner.lastname }} ({{ $financialTransaction.recipient.owner.mailAddress }}) - {{ $financialTransaction.recipient.description }}</td>
+                            <td>{{ $financialTransaction.sender.owner.firstname }} {{
+                                $financialTransaction.sender.owner.lastname }} ({{
+                                $financialTransaction.sender.owner.mailAddress }}) - {{
+                                $financialTransaction.sender.description }}</td>
+                            <td>{{ $financialTransaction.recipient.owner.firstname }} {{
+                                $financialTransaction.recipient.owner.lastname }} ({{
+                                $financialTransaction.recipient.owner.mailAddress }}) - {{
+                                $financialTransaction.recipient.description }}</td>
                             <td>
-                                <a href="/financialtransaction/details?id={{ $financialTransaction.id }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Details</a>
-                                <a href="/financialtransaction/edit?id={{ $financialTransaction.id }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
-                                <a href="/financialtransaction/remove?id={{ $financialTransaction.id }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Remove</a>
+                                <a href="/financialTransaction/details?id={{ $financialTransaction.id }}"
+                                    class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Details</a>
+                                <a href="/financialTransaction/edit?id={{ $financialTransaction.id }}"
+                                    class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
+                                <a href="/financialTransaction/remove?id={{ $financialTransaction.id }}"
+                                    class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Remove</a>
                             </td>
                         </tr>
                         {% endforeach %}
                     </tbody>
                 </table>
                 <div class="form-group">
-                    <a href="/financialtransaction/add" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ajouter</a>
+                    <a href="/financialTransaction/add" class="btn btn-primary btn-lg active" role="button"
+                        aria-pressed="true">Ajouter</a>
                 </div>
             </div>
         </div>
