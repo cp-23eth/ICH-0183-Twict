@@ -58,7 +58,8 @@ class UserController extends AppController
             $this->flash->warning('Erreur lors de la suppression de l\'utilisateur');
             $this->redirect('/user/index');
         }
-
+        
+        User::remove($user);
         $this->flash->success('Utilisateur supprimé');
         $this->redirect('/user/index');
     }
