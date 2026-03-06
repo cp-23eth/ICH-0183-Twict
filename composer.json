@@ -1,0 +1,13 @@
+{
+    "autoload": {
+        "files": [
+            "Core/Libs/ArrayPath.php",
+            "Core/Libs/Debug.php",
+            "Core/Libs/String.php"
+        ],
+        "psr-4": {
+            "Core\\": "Core/",
+            "App\\": "App/"
+        }
+    }
+}
