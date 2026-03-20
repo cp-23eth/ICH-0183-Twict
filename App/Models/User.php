@@ -22,6 +22,22 @@ class User extends Model
         return $models;
     }
 
+    public static function findByEmailAddressAndPassword(string $mailAddress, string $password): ?array
+    {
+        $db = static::getDB();
+
+        $model = $db
+            ->query(<<< SQL
+                SELECT `mailAddress`, `password`
+                FROM `users`
+                WHERE `mailAddress` = '{$mailAddress}' AND `password` = '{$password}'
+                LIMIT 1;
+            SQL)
+            ->fetch();
+
+        return $model ?: null;
+    }
+
     public static function find(int $id): ?array
     {
         $db = static::getDB();
