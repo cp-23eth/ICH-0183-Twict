@@ -105,4 +105,20 @@ class User extends Model
 
         return $model;
     }
+
+    public static function findByMailAddress(string $mailAddress): ?array
+    {
+        $db = static::getDB();
+
+        $model = $db
+            ->query(<<< SQL
+                SELECT `id`, `firstname`, `lastname`, `mailAddress`, `password`, `createdAt`, `updatedAt`
+                FROM `users`
+                WHERE `mailAddress`= '{$mailAddress}'
+                LIMIT 1;
+                SQL)
+            ->fetch() ?: null;
+
+        return $model;
+    }
 }

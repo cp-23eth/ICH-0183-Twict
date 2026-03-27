@@ -10,7 +10,7 @@ use PDO;
  * Base model
  */
 abstract class Model
-{
+{   
     /**
      * Get the PDO database connection
      *
