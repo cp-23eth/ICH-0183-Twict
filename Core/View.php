@@ -135,8 +135,11 @@ class View implements \ArrayAccess
 		// Append fallback values. Ex : {{ $this.undefined }} to {{ $this.undefined ?? '' }}
 		$code = preg_replace('/({{[^{}]+?)(\$[\w_\.]+)([^{}]+?}})/is', '$1$2 ?? \'\'$3', $code);
 
-		// Convert {{{ }}} tags to echo expression. Ex : {{{ $this.value }}} to <?php echo $this.value ...
-		$code = preg_replace('/{{\s*([^{}]+?)\s*}}/is', '<?php echo $1 ?>', $code);
+		// Convert {{{ }}} tags to echo expression without escaping. Ex : {{{ $this.value }}} to <?php echo $this.value ...
+		$code = preg_replace('/{{{\s*([^{}]+?)\s*}}}/is', '<?php echo $1 ?>', $code);
+
+		// Convert {{ }} tags to echo expression with escaping. Ex : {{ $this.value }} to <?php echo htmlentities($this.value, ENT_QUOTES, "UTF-8") ...
+		$code = preg_replace('/{{\s*([^{}]+?)\s*}}/is', '<?php echo htmlentities($1, ENT_QUOTES, "UTF-8") ?>', $code);
 
 		return $code;
 	}
