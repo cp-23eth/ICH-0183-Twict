@@ -28,6 +28,14 @@ class UserController extends AppController
     public function add_post(): void
     {
         $user = $_POST['user'];
+        $password = $_POST['user']['password'];
+
+        $hash = password_hash($password, PASSWORD_BCRYPT, [
+            'cost' => 14
+        ]); 
+
+        $_POST['user']['password'] = $hash;
+        
         User::add($user);
 
         $this->flash->success('Utilisateur ajouté');

@@ -19,6 +19,7 @@ class AuthBasicController extends AppController
             return;
         }
 
+        
 
         $user = User::findByMailAddressAndPassword($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']);
 

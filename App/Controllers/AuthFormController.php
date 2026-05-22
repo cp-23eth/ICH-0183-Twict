@@ -22,14 +22,12 @@ class AuthFormController extends AppController
     {
         $user = $_POST['user'];
 
-
         $user = User::findByMailAddressAndPassword($user['mailAddress'], $user['password']);
 
         if ($user == null) {
             $this->flash->danger('Le nom d\'utilisateur est invalide');
             $this->redirect('/authForm/login');
         }
-
 
         $this->sessionSecurityHandler->regenerateSession();
         $_SESSION['user'] = $user;

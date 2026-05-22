@@ -135,7 +135,11 @@ class User extends AppModel
             return null;
         }
 
-        if (self::verifyPassword($password, $model['password']) === false) {
+        // if (self::verifyPassword($password, $model['password']) === false) {
+        //     return null;
+        // }
+
+        if (password_verify($password, $model['password']) === false) {
             return null;
         }
 
