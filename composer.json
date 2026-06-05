@@ -9,5 +9,8 @@
             "Core\\": "Core/",
             "App\\": "App/"
         }
+    },
+    "require": {
+        "monolog/monolog": "^3.10"
     }
 }

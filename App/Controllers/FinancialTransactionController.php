@@ -6,17 +6,38 @@ namespace App\Controllers;
 
 use App\Models\FinancialTransaction;
 use App\Models\BankAccount;
+use Override;
+
+use Monolog\Level;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 class FinancialTransactionController extends AppController
 {
+
+    #[Override]
+    protected function before(): bool
+    {
+        parent::before();
+
+        return true;
+    }
+
     public function index(): void
     {
-        if (!empty($_GET['idSender']))
+        $log = new Logger('name');
+        $log->pushHandler(new StreamHandler('logs/.log'));
+
+        if (!empty($_GET['idSender'])) {
+            $log->info('Récupération des transactions financières via l\'id du sender.');
             $this->view['financialTransactions'] = FinancialTransaction::findByIdSender((int)$_GET['idSender']);
-        else if (!empty($_GET['idRecipient']))
+        } else if (!empty($_GET['idRecipient'])) {
+            $log->notice('Récupération des transactions financières via l\'id du reciient (pas d\'id du sender).');
             $this->view['financialTransactions'] = FinancialTransaction::findByIdRecipient((int)$_GET['idRecipient']);
-        else
+        } else {
+            $log->warning('Récupération de toutes les transactions financières');
             $this->view['financialTransactions'] = FinancialTransaction::getAll();
+        }
     }
 
     public function details(): void
