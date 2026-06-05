@@ -4,3 +4,5 @@ COPY ./config/apache/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
 RUN docker-php-ext-install pdo pdo_mysql \
     && a2enmod rewrite
+
+RUN cd /var/www/html/logs && chmod 777 twict.log

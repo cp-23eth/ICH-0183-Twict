@@ -1,0 +1,4 @@
+[2026-06-05T06:35:06.327281+00:00] App\Controllers\FinancialTransactionController.INFO: Begining handle `GET` request on `/financialTransaction/index` {"idUser":null,"GET":[]} []
+[2026-06-05T06:35:54.625997+00:00] App\Controllers\FinancialTransactionController.INFO: Begining handle `GET` request on `/financialTransaction/remove?id=2` {"idUser":null,"GET":{"id":"2"}} []
+[2026-06-05T06:35:55.762860+00:00] App\Controllers\FinancialTransactionController.INFO: Begining handle `POST` request on `/financialTransaction/remove?id=2` {"idUser":null,"GET":{"id":"2"}} []
+[2026-06-05T06:35:55.777865+00:00] App\Controllers\FinancialTransactionController.INFO: Begining handle `GET` request on `/financialTransaction/index` {"idUser":null,"GET":[]} []
